@@ -20,7 +20,7 @@ public class Main {
             return;
         }
 
-        System.out.print("请输入导航方式（walk/步行 或 bike/骑行）：");
+        System.out.print("请输入导航方式（walk/步行、bike/骑行或 mixed/混合）：");
         String mode = readLine(scanner);
         NavigationSystem system = new NavigationSystem();
         String result = system.navigate(start, end, mode);

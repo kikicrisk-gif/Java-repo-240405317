@@ -31,6 +31,13 @@ public class NavigationSystemTest {
     }
 
     @Test
+    void mixedModeReturnsTwoSegments() {
+        String result = system.navigate(gate, building, "mixed");
+        assertTrue(result.contains("步行"));
+        assertTrue(result.contains("骑行"));
+    }
+
+    @Test
     void nullPlaceReturnsError() {
         assertEquals("输入错误：起点和终点不能为空。", system.navigate(null, building, "walk"));
     }
@@ -53,7 +60,7 @@ public class NavigationSystemTest {
 
     @Test
     void unknownModeReturnsError() {
-        assertEquals("输入错误：仅支持 walk（步行）或 bike（骑行）。",
+        assertEquals("输入错误：仅支持 walk（步行）、bike（骑行）或 mixed（混合）。",
                 system.navigate(gate, building, "fly"));
     }
 

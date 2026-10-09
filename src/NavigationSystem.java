@@ -16,8 +16,10 @@ public class NavigationSystem {
                 return route + "：请步行沿校园主路前往。";
             } else if ("bike".equalsIgnoreCase(selectedMode) || "骑行".equals(selectedMode)) {
                 return route + "：请骑行沿校园骑行道前往。";
+            } else if ("mixed".equalsIgnoreCase(selectedMode) || "混合".equals(selectedMode)) {
+                return route + "：先步行至校园驿站，再骑行沿校园骑行道前往。";
             } else {
-                return "输入错误：仅支持 walk（步行）或 bike（骑行）。";
+                return "输入错误：仅支持 walk（步行）、bike（骑行）或 mixed（混合）。";
             }
         }
     }
