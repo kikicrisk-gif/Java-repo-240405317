@@ -41,6 +41,12 @@ public class NavigationSystemTest {
     }
 
     @Test
+    void sameNameDifferentTypeIsAllowed() {
+        CampusPlace other = new Building("正门");
+        assertTrue(system.navigate(gate, other, "walk").contains("步行"));
+    }
+
+    @Test
     void blankModeReturnsError() {
         assertEquals("输入错误：导航方式不能为空。", system.navigate(gate, building, " "));
     }

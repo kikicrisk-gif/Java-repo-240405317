@@ -2,7 +2,8 @@ public class NavigationSystem {
     public String navigate(CampusPlace start, CampusPlace end, String mode) {
         if (start == null || end == null) {
             return "输入错误：起点和终点不能为空。";
-        } else if (start.getName().equals(end.getName())) {
+        } else if (start.getType().equals(end.getType())
+                && start.getName().equals(end.getName())) {
             return "输入错误：起点和终点不能相同。";
         } else if (mode == null || mode.trim().isEmpty()) {
             return "输入错误：导航方式不能为空。";

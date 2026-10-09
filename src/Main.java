@@ -23,7 +23,8 @@ public class Main {
         System.out.print("请输入导航方式（walk/步行 或 bike/骑行）：");
         String mode = readLine(scanner);
         NavigationSystem system = new NavigationSystem();
-        System.out.println("导航结果：" + system.navigate(start, end, mode));
+        String result = system.navigate(start, end, mode);
+        System.out.println(result);
     }
 
     private static String readLine(Scanner scanner) {

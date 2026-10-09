@@ -1,5 +1,5 @@
 public abstract class CampusPlace {
-    private String name;
+    private final String name;
 
     public CampusPlace(String name) {
         if (name == null || name.trim().isEmpty()) {
